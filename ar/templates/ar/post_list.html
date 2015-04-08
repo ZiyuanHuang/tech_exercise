@@ -14,8 +14,10 @@
 
 	    {% for post in posts %}
 		    <div>
-		        <p>published: {{ post.published_date }}</p>
-		        <h3><a href="">{{ post.title }}</a></h3>
+		    	<div class="date">
+		        	{{ post.published_date }} <span> |</span> <span class = "author">{{post.author}}</span>
+		        </div>
+		        <h3><a href="{% url 'ar.views.post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
 		        <p>{{ post.text|linebreaks }}</p>
 		    </div>
 		{% endfor %}
