@@ -1,25 +1,22 @@
-{% load staticfiles %}
-<html>
-    <head>
-        <title>Article Site</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="{% static 'css/ar.css' %}">
-    </head>
-    <body>
-        <div>
-            <h3><a href="/">Top 10 List</a></h3>
-            <div class = 'box'> </div>
-        </div>
 
-	    {% for post in posts %}
+{% extends 'ar/base.html' %}
+	{% block content %}
+	
+		<div>
+            <h3><a href="/">Top 10 List</a></h3>
+            <div class="date">
+		     
+		    </div>
+            <div class = 'box'> </div>
+           
+        </div>
+	 	{% for post in posts %}
 		    <div>
+		    	<h3><a href="{% url 'ar.views.post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
 		    	<div class="date">
 		        	{{ post.published_date }} <span> |</span> <span class = "author">{{post.author}}</span>
 		        </div>
-		        <h3><a href="{% url 'ar.views.post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
-		        <p>{{ post.text|linebreaks }}</p>
+		        <p>{{ post.preview_text|linebreaks }}</p>
 		    </div>
 		{% endfor %}
-    </body>
-</html>
+	{% endblock content %}

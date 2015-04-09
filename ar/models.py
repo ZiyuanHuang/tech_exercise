@@ -8,6 +8,7 @@ class Post(models.Model):
             'date published')
     category = models.CharField(max_length=200)
     text = models.TextField()
+    preview_text = models.TextField()
     def __str__(self):
         return self.title
     

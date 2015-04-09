@@ -1,0 +1,12 @@
+{% extends 'ar/base.html' %}
+
+{% block content %}
+	<div>
+		<h3>{{ post.title }}</h3>
+	    <div class="date">
+	        {{ post.published_date }} <span> |</span> <span class = "author">{{post.author}}</span>
+	        <div class = 'box'> </div>
+	    </div>
+	    <p>{{ post.text|linebreaks }}</p>
+	</div>
+{% endblock %}
