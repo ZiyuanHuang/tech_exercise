@@ -1,22 +1,29 @@
 
 {% extends 'ar/base.html' %}
 	{% block content %}
-	
 		<div>
             <h3><a href="/">Top 10 List</a></h3>
             <div class="date">
-		     
+		     	{{ selectedPosts.published_date }} <span> |</span> <span class = "author">{{selectedPosts.author}}</span>
 		    </div>
-            <div class = 'box'> </div>
+            <img class = "picture img-responsive" src="http://placehold.it/823x190">
+            <p>{{ selectedPosts.preview_text|linebreaks }}</p>
            
         </div>
+
 	 	{% for post in posts %}
-		    <div>
-		    	<h3><a href="{% url 'ar.views.post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
-		    	<div class="date">
-		        	{{ post.published_date }} <span> |</span> <span class = "author">{{post.author}}</span>
-		        </div>
-		        <p>{{ post.preview_text|linebreaks }}</p>
-		    </div>
+	 		<div class = "listnum">
+		 		<section class = "left">
+		 			<div class="numberCircle">{{ forloop.counter }}</div>
+		 		</section>
+			    <section class = "right">
+			    	<h3><a href="{% url 'ar.views.post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
+			    	<div class="date">
+			        	{{ post.published_date }} <span> |</span> <span class = "author">{{post.author}}</span>
+			        </div>
+			        <p>{{ post.preview_text|linebreaks }}</p>
+					<p class = "call"> call to action </p>
+			    </section>
+			</div>
 		{% endfor %}
 	{% endblock content %}

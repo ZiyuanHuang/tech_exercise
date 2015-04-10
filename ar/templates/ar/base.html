@@ -2,12 +2,48 @@
 <html>
     <head>
         <title>Article Site</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="{% static 'css/ar.css' %}">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     </head>
     <body>
-	    {% block content %}
-		{% endblock %}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-2">
+                    <div id= "navbar"> 
+                        <img class = "img-responsive" id ="image" src="http://placehold.it/80x80">
+                        <a class = "nav" href="/"><center><img class = "img-responsive"id ="simage"  src="http://placehold.it/25x25"></center>&nbsp;Nav1</a>
+                        <a class = "nav" href="/"><center><img class = "img-responsive"id ="simage"  src="http://placehold.it/25x25"></center>&nbsp;Nav2</a>
+                        <a class = "nav" href="/"><center><img class = "img-responsive"id ="simage"src="http://placehold.it/25x25"></center>&nbsp;Nav3</a>
+                        <a class = "nav" href="/"><center><img class = "img-responsive"id ="simage"src="http://placehold.it/25x25"></center>&nbsp;Nav4</a>
+                        <a class = "nav" href="/"><center><img class = "img-responsive"id ="simage"src="http://placehold.it/25x25"></center>&nbsp;Nav5</a>
+                    </div>
+                </div>
+                <div class="col-xs-8">
+
+                        {% block content %}
+                        {% endblock %}
+                    <div class="read_next">
+                        <p class="top_part"> What to Read Next</p>
+                        <footer>
+                            <img class = "picture img-responsive" src="http://placehold.it/200x200"><a href="">Related Title1</a>
+                        </footer>
+                        <footer>
+                            <img class = "picture img-responsive" src="http://placehold.it/200x200"><a href="">Related Title2</a>
+                        </footer>
+                        <footer>
+                            <img class = "picture img-responsive" src="http://placehold.it/200x200"><a href="">Related Title3</a>
+                        </footer>
+                        <footer>
+                            <img class = "picture img-responsive" src="http://placehold.it/200x200"><a href="">Related Title4</a>
+                        </footer>
+                    </div>
+
+
+                </div>
+                <div class="col-xs-2"></div>
+            </div>
+        </div>
     </body>
 </html>

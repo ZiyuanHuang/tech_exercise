@@ -5,8 +5,16 @@
 		<h3>{{ post.title }}</h3>
 	    <div class="date">
 	        {{ post.published_date }} <span> |</span> <span class = "author">{{post.author}}</span>
-	        <div class = 'box'> </div>
+	        <img class = "picture img-responsive" src="http://placehold.it/823x290">
 	    </div>
-	    <p>{{ post.text|linebreaks }}</p>
+	    <div class="detail_article">
+	    	<section>
+	    		<p>{{ post.text|linebreaks }}</p>
+	    	</section>
+
+	    	<aside>
+	    		<img class = "picture1 img-responsive" src="http://placehold.it/320x320">
+	    	</aside>
+	    </div>
 	</div>
 {% endblock %}
